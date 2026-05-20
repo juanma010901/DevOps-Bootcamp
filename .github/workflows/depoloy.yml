@@ -37,15 +37,15 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION }}
 
     - name: Retrieve Vault password from AWS Secrets Manager
-        working-directory: "./Gestión de la Configuración con Ansible + IA/Taller4"
-        run: |
-          ansible-playbook retrieve_vault_password.yml
-        
+      working-directory: "./Gestión de la Configuración con Ansible + IA/Taller4"
+      run: |
+        ansible-playbook retrieve_vault_password.yml
+
     - name: Debug inventory output
       working-directory: "./Gestión de la Configuración con Ansible + IA/Taller4"
       run: |
         ansible-inventory -i inventario.aws_ec2.yml --list
-        
+
     - name: Run Ansible playbook
       working-directory: "./Gestión de la Configuración con Ansible + IA/Taller4"
       run: |
